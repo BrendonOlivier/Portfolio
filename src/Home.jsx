@@ -5,7 +5,6 @@ import { Header, Skills, AboutMe, ProjetcCards, Projects, Form, Footer, Digitand
 import { Container, ContainerMain, Info, Perfil, Button } from './styles.js';
 import { FaArrowUp } from "react-icons/fa";
 import ImgPerfil from './assets/Brendon.png';
-import Curriculo from './assets/curriculo.pdf'; // Pegando o currículo
 
 export function Home() {
     const [showScroll, setShowScroll] = useState(false);
@@ -53,6 +52,8 @@ export function Home() {
         }
     };
 
+    const cvLink = 'https://drive.google.com/file/d/1VGyxZ-XPT7_AePUb5vBUm3yBSWoFwXXT/view?usp=sharing';
+
     return (
         <Container>
             <div className='bg'></div>
@@ -65,7 +66,7 @@ export function Home() {
                     <h1>{texts[language].introduction}</h1>
                     <Digitando />
                     <p>{texts[language].welcome}</p>
-                    <a href={Curriculo} download><Button>Dowload CV</Button></a>
+                    <a href={cvLink} target='_blank'><Button>Dowload CV</Button></a>
                 </Info>
 
                 <Perfil>
