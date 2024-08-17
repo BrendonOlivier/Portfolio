@@ -7,6 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     width: 100vw;
     padding: 50px 100px;
+    background: transparent;
 
     h5 {
         text-align: center;
@@ -26,10 +27,6 @@ export const Container = styled.div`
             left: 50%;
             transform: translateX(-50%);
             animation: expand 3s infinite alternate;
-            
-            @media (max-width: 768px) {  
-                background-color: #000;
-            }
         }
 
         
@@ -56,13 +53,12 @@ export const Container = styled.div`
 
         @media (max-width: 768px) {  
             text-align: center;
-            color: #000;
         }
     }
 
     @media (max-width: 768px) {  
         padding: 50px 15px;
-        background: #E6E6FA;
+        background: transparent;
         padding-top: 20px;
         height: 100%;
     }
