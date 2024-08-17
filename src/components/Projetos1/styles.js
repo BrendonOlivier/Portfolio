@@ -62,7 +62,7 @@ export const Container = styled.div`
         width: 100%;
         display: flex;
         height: 100%;
-        gap: 5px;
+        gap: 10px;
     }  
     
     .projectImgs {
@@ -75,6 +75,7 @@ export const Container = styled.div`
         border-radius: 10px;
         transition: all ease-out 0.5s;
         cursor: pointer;
+        position: relative; 
 
         &:hover {
             width: 900px;
@@ -85,23 +86,36 @@ export const Container = styled.div`
 
     @media (max-width: 768px) {  
         padding: 20px 15px;
-        display: grid;
-        height: 170vh;
+        height: auto;
         
         .boxImages {  
             display: grid;
             grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
             width: 95vw;
-        }  
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .card {
+            width: 100%;
+            position: relative;
+        }
 
-        .projectImgs {  
+        .projectImgsLinks {  
             width: 100%; 
+            display: inline-block;
+        }
+
+        .projectImgs {
+            width: 95vw; 
             height: auto; 
-            transition: transform 0.5s ease;
+            transition: none;
             filter: grayscale(0);
             
-            &:hover {  
-                display: none;
+            &:hover {
+                width: 95vw;
+                height: auto;
             }  
         }  
     } 

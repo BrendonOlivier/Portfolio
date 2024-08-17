@@ -43,7 +43,7 @@ export function Home() {
         'pt-BR': {
             greeting: "Olá a todos, me chamo",
             introduction: "Brendon Lira Olivier, e sou um",
-            welcome: "Seja bem vindo ao meu Portfólio! Venha conheçer mais sobre mim e meus projetos."
+            welcome: "Seja bem vindo ao meu Portfólio! Venha conhecer mais sobre mim e meus projetos."
         },
         'en-US': {
             greeting: "Hello everyone, my name is",

@@ -122,7 +122,7 @@ export function Form() {
                         <h5>{texts[language].introduction2}</h5>
 
                         <div className='cont-inputs'>
-                            <label>{texts[language].message}</label>
+                            <label>{texts[language].name}</label>
                             <input
                                 type="text"
                                 placeholder="Escreva seu nome"
