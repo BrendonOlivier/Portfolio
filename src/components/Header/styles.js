@@ -39,20 +39,30 @@ export const ContLinks = styled.ul`
     gap: 30px;
 
     @media (max-width: 768px) {  
-        display: ${props => (props.menuVisible ? 'flex' : 'none')}; 
+        display: flex; 
         flex-direction: column;  
         position: absolute;  
-        top: 100%;
-        left: 0;  
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
         background-color: #000;
         width: 100%;
         height: 100vh;
-        padding: 50px;
+        padding: 100px 0;
 
-        opacity: ${props => props.menuVisible ? '1' : '0'};
-        pointer-events: ${props => props.menuVisible ? 'auto' : 'none'};
-        transition: .5s;
-        transform: ${props => props.menuVisible ? 'translateY(0)' : 'translateY(100px)'};
+        transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;  
+        transform: ${props => (props.menuVisible ? 'translateY(0)' : 'translateY(-100%)')};  
+        opacity: ${props => (props.menuVisible ? '1' : '0')}; // Adiciona opacidade para transição 
+
+        .icon-close {
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+        }
     }
 
     li {

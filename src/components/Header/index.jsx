@@ -42,6 +42,19 @@ export function Header() {
         setMenuVisible(!menuVisible);
     };
 
+    const closeMenu = () => {
+        setMenuVisible(false);
+    };
+
+    const handleLinkClick = (event, targetId) => {
+        event.preventDefault(); // Previne o comportamento padrão do link  
+        closeMenu(); // Fecha o menu  
+        const element = document.querySelector(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' }); // Rolagem suave para a seção  
+        }
+    };
+
     return (
         <Container changeBackground={changeBackground}>
             <ContLogo>
@@ -49,14 +62,24 @@ export function Header() {
             </ContLogo>
 
             <MenuToggle onClick={toggleMenu}>
-                {menuVisible ? <FaTimes /> : <FaBars />} {/* Ícone */}
+                <FaBars />
             </MenuToggle>
 
             <ContLinks menuVisible={menuVisible}>
-                <a href="#tecnologias"><li>{texts[language].technologies}</li></a>
-                <a href="#sobre"><li>{texts[language].aboutMe}</li></a>
-                <a href="#projetos"><li>{texts[language].projects}</li></a>
-                <a href="#contato">
+                <FaTimes onClick={closeMenu} className='icon-close' />
+                <a href="#tecnologias" onClick={(e) => handleLinkClick(e, "#tecnologias")}>
+                    <li>{texts[language].technologies}</li>
+                </a>
+
+                <a href="#sobre" onClick={(e) => handleLinkClick(e, "#sobre")}>
+                    <li>{texts[language].aboutMe}</li>
+                </a>
+
+                <a href="#projetos" onClick={(e) => handleLinkClick(e, "#projetos")}>
+                    <li>{texts[language].projects}</li>
+                </a>
+
+                <a href="#contato" onClick={(e) => handleLinkClick(e, "#contato")}>
                     <button className='Btn' style={{ '--btn-content': `'${texts[language].button}'` }}>
                         <span className="button-text">{texts[language].button}</span>
                     </button>
@@ -65,8 +88,14 @@ export function Header() {
                 <Language>
                     <p>Idioma</p>
                     <div className='cont-language'>
-                        <img src={Brazil} onClick={() => setLanguage('pt-BR')} />
-                        <img src={EUA} onClick={() => setLanguage('en-US')} />
+                        <img src={Brazil} onClick={() => {
+                            setLanguage('pt-BR');   
+                            closeMenu();
+                        }} />
+                        <img src={EUA} onClick={() => {
+                            setLanguage('en-US');
+                            closeMenu();
+                        }} />
                     </div>
                 </Language>
             </ContLinks>
