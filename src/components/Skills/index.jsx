@@ -1,7 +1,7 @@
 import { useLanguage } from '../../hooks/LanguageContext.jsx';
 
 import { motion } from 'framer-motion';
-import { Container, Info, Habil, FrontEnd, BackEnd } from './styles'
+import { Container, Info, Habil, HardSkills } from './styles'
 import Html from '../../assets/HTML.png'
 import Css from '../../assets/CSS.png'
 import JavaScript from '../../assets/JavaScript.png'
@@ -80,7 +80,7 @@ export function Skills() {
             </Info>
 
             <Habil>
-                <FrontEnd>
+                <HardSkills>
                     <motion.div
                         variants={motionVariants}
                         initial="initial"
@@ -93,11 +93,7 @@ export function Skills() {
                         </div>
                     ))}
                     </motion.div>
-                </FrontEnd>
-
-                <BackEnd>
-
-                </BackEnd>
+                </HardSkills>
             </Habil>
         </Container>
     )

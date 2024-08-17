@@ -68,10 +68,14 @@ export const Habil = styled.div`
     position: relative;  
     overflow: hidden;  
     width: 100%;
-    height: 100px;  
+    height: 100px; 
+    
+    @media (max-width: 768px) {  
+        height: 100%;
+    }
 `
 
-export const FrontEnd = styled.div`
+export const HardSkills = styled.div`
      display: flex;
      width: 100%;
      flex-direction: column;
@@ -79,6 +83,7 @@ export const FrontEnd = styled.div`
      justify-content: center;
      position: absolute;
      cursor: no-drop;
+     
 
     .carrossel {
         display: flex;
@@ -91,7 +96,7 @@ export const FrontEnd = styled.div`
     img {  
         width: 60px;  
         height: 60px;
-        margin-bottom: 10px;  
+        margin-bottom: 10px;
     }  
 
     p {  
