@@ -2,6 +2,7 @@ import { useLanguage } from '../../hooks/LanguageContext.jsx';
 import { Container, Info, Button } from './styles'
 import Perfil from '../../assets/Brendon-2.jpeg'
 import { FaRegFilePdf } from "react-icons/fa6";
+import { Zoom } from 'react-reveal';
 
 export function AboutMe() {
     const { language } = useLanguage(); // Obetendo as linguagens
@@ -28,17 +29,19 @@ export function AboutMe() {
 
     return (
         <Container id='sobre'>
-            <div className='caixa-img'>
-                <img src={Perfil} alt="Foto de perfil" />
-                <h3>{texts[language].title}</h3>
-            </div>
+            <Zoom>
+                <div className='caixa-img'>
+                    <img src={Perfil} alt="Foto de perfil" />
+                    <h3>{texts[language].title}</h3>
+                </div>
 
-            <Info>
-                <h4>{texts[language].introduction}</h4>
-                <a href={cvLink} target='_blank'>
-                    <Button>{texts[language].button} <FaRegFilePdf /></Button>
-                </a>
-            </Info>
+                <Info>
+                    <h4>{texts[language].introduction}</h4>
+                    <a href={cvLink} target='_blank'>
+                        <Button>{texts[language].button} <FaRegFilePdf /></Button>
+                    </a>
+                </Info>
+            </Zoom>
         </Container>
     )
 }

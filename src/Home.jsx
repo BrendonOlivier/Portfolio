@@ -60,20 +60,21 @@ export function Home() {
 
             <Header />
 
-            <ContainerMain>
-                <Info>
-                    <h2>{texts[language].greeting}</h2>
-                    <h1>{texts[language].introduction}</h1>
-                    <Digitando />
-                    <p>{texts[language].welcome}</p>
-                    <a href={cvLink} target='_blank'><Button>Dowload CV</Button></a>
-                </Info>
+                <ContainerMain>
+                    <Info>
+                        <h2>{texts[language].greeting}</h2>
+                        <h1>{texts[language].introduction}</h1>
+                        <Digitando />
+                        <p>{texts[language].welcome}</p>
+                        <a href={cvLink} target='_blank'><Button>Dowload CV</Button></a>
+                    </Info>
 
-                <Perfil>
-                    <img src={ImgPerfil} alt="" />
-                </Perfil>
-            </ContainerMain>
+                    <Perfil>
+                        <img src={ImgPerfil} alt="" />
+                    </Perfil>
+                </ContainerMain>
 
+            
             <Skills />
             <AboutMe />
             <ProjetcCards />

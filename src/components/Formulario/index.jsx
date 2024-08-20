@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLanguage } from '../../hooks/LanguageContext.jsx';
+import Roll from 'react-reveal/Zoom';
 
 import { Container, MainContatos, Contatos, Formulario } from './styles'
 import { MdMarkEmailUnread } from "react-icons/md";
@@ -67,93 +68,98 @@ export function Form() {
             <ToastContainer />
             <h4>{texts[language].title}</h4>
 
+
             <MainContatos>
-                <Contatos>
-                    <h5>{texts[language].introduction}</h5>
+                <Roll>
+                    <Contatos>
+                        <h5>{texts[language].introduction}</h5>
 
-                    <div className='cont-contato'>
-                        <MdMarkEmailUnread className='icon' />
-                        <p className="name-contato">
-                            E-mail
-                        </p>
-                        <p>contatobrendonolivier@gmail.com</p>
+                        <div className='cont-contato'>
+                            <MdMarkEmailUnread className='icon' />
+                            <p className="name-contato">
+                                E-mail
+                            </p>
+                            <p>contatobrendonolivier@gmail.com</p>
 
-                        <div className='redes'>
-                            <p>{texts[language].contact}</p>
-                            <a href={`mailto:contatobrendonolivier@gmail.com`} target="_blank" rel="noopener noreferrer">
-                                <FaLongArrowAltRight className='icon2' />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className='cont-contato'>
-                        <FaLinkedinIn className='icon' style={{ color: '#086ba4' }} />
-                        <p className="name-contato" style={{ color: '#086ba4' }}>
-                            Linkedin
-                        </p>
-                        <p>Brendon Lira Olivier</p>
-
-                        <div className='redes'>
-                            <p>{texts[language].contact}</p>
-                            <a href="https://www.linkedin.com/in/brendon-olivier/" target="_blank">
-                                <FaLongArrowAltRight className='icon2' />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className='cont-contato'>
-                        <FaInstagram className='icon' style={{ color: '#F7016D' }} />
-                        <p className="name-contato" style={{ color: '#F7016D' }}>
-                            Instagram
-                        </p>
-                        <p>be_olivier</p>
-
-                        <div className='redes'>
-                            <p>{texts[language].contact}</p>
-                            <a href="https://www.instagram.com/be_olivierr/" target="_blank">
-                                <FaLongArrowAltRight className='icon2' />
-                            </a>
-                        </div>
-                    </div>
-                </Contatos>
-
-                <Formulario>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <h5>{texts[language].introduction2}</h5>
-
-                        <div className='cont-inputs'>
-                            <label>{texts[language].name}</label>
-                            <input
-                                type="text"
-                                placeholder="Escreva seu nome"
-                                {...register('name', { required: 'Nome é obrigatório' })}
-                            />
-                            {errors.name && <span>{errors.name.message}</span>}
+                            <div className='redes'>
+                                <p>{texts[language].contact}</p>
+                                <a href={`mailto:contatobrendonolivier@gmail.com`} target="_blank" rel="noopener noreferrer">
+                                    <FaLongArrowAltRight className='icon2' />
+                                </a>
+                            </div>
                         </div>
 
-                        <div className='cont-inputs'>
-                            <label>Email</label>
-                            <input
-                                type="Escreva seu e-mail"
-                                placeholder="Email"
-                                {...register('email', { required: 'Email é obrigatório' })}
-                            />
-                            {errors.email && <span>{errors.email.message}</span>}
+                        <div className='cont-contato'>
+                            <FaLinkedinIn className='icon' style={{ color: '#086ba4' }} />
+                            <p className="name-contato" style={{ color: '#086ba4' }}>
+                                Linkedin
+                            </p>
+                            <p>Brendon Lira Olivier</p>
+
+                            <div className='redes'>
+                                <p>{texts[language].contact}</p>
+                                <a href="https://www.linkedin.com/in/brendon-olivier/" target="_blank">
+                                    <FaLongArrowAltRight className='icon2' />
+                                </a>
+                            </div>
                         </div>
 
-                        <div className='cont-inputs'>
-                            <label>{texts[language].introduction2}</label>
-                            <textarea className='mensagem-texto'
-                                placeholder={texts[language].textArea}
-                                {...register('message', { required: 'Mensagem é obrigatória' })}
-                            />
-                            {errors.message && <span>{errors.message.message}</span>}
+                        <div className='cont-contato'>
+                            <FaInstagram className='icon' style={{ color: '#F7016D' }} />
+                            <p className="name-contato" style={{ color: '#F7016D' }}>
+                                Instagram
+                            </p>
+                            <p>be_olivier</p>
+
+                            <div className='redes'>
+                                <p>{texts[language].contact}</p>
+                                <a href="https://www.instagram.com/be_olivierr/" target="_blank">
+                                    <FaLongArrowAltRight className='icon2' />
+                                </a>
+                            </div>
                         </div>
-                        <button type="submit" className='Btn' style={{ '--btn-content': `'${texts[language].button}'` }}>
-                            <span className="button-text">{texts[language].button}</span>
-                        </button>
-                    </form>
-                </Formulario>
+                    </Contatos>
+                </Roll>
+
+                <Roll>
+                    <Formulario>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <h5>{texts[language].introduction2}</h5>
+
+                            <div className='cont-inputs'>
+                                <label>{texts[language].name}</label>
+                                <input
+                                    type="text"
+                                    placeholder="Escreva seu nome"
+                                    {...register('name', { required: 'Nome é obrigatório' })}
+                                />
+                                {errors.name && <span>{errors.name.message}</span>}
+                            </div>
+
+                            <div className='cont-inputs'>
+                                <label>Email</label>
+                                <input
+                                    type="Escreva seu e-mail"
+                                    placeholder="Email"
+                                    {...register('email', { required: 'Email é obrigatório' })}
+                                />
+                                {errors.email && <span>{errors.email.message}</span>}
+                            </div>
+
+                            <div className='cont-inputs'>
+                                <label>{texts[language].introduction2}</label>
+                                <textarea className='mensagem-texto'
+                                    placeholder={texts[language].textArea}
+                                    {...register('message', { required: 'Mensagem é obrigatória' })}
+                                />
+                                {errors.message && <span>{errors.message.message}</span>}
+                            </div>
+                            <button type="submit" className='Btn' style={{ '--btn-content': `'${texts[language].button}'` }}>
+                                <span className="button-text">{texts[language].button}</span>
+                            </button>
+                        </form>
+                    </Formulario>
+                </Roll>
 
             </MainContatos>
 

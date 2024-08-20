@@ -1,4 +1,5 @@
 import { useLanguage } from '../../hooks/LanguageContext.jsx';
+import { Fade } from 'react-reveal';
 
 import { motion } from 'framer-motion';
 import { Container, Info, Habil, HardSkills } from './styles'
@@ -15,6 +16,7 @@ import Prisma from '../../assets/Prisma.png'
 import Sequelize from '../../assets/Seq.png'
 import Typescript from '../../assets/Ts.png'
 import Styled from '../../assets/StyledC.png'
+import Tailwind from '../../assets/Tailwind.png'
 
 const skills = [
     Html,
@@ -28,7 +30,8 @@ const skills = [
     Prisma,
     Sequelize,
     Typescript,
-    Styled
+    Styled,
+    Tailwind
 ];
 
 const skillTitles = [
@@ -36,14 +39,15 @@ const skillTitles = [
     'CSS',
     'JavaScript',
     'React',
-    'React Native',
+    'R. Native',
     'Docker',
     'Node.js',
     'MongoDB',
     'Prisma',
     'Sequelize',
     'Typescript',
-    'Styled-component'
+    'Styled-c',
+    'Tailwind',
 ];
 
 export function Skills() {
@@ -74,27 +78,29 @@ export function Skills() {
 
     return (
         <Container id='tecnologias'>
-            <Info>
-                <h4>{texts[language].title}</h4>
-                <p>{texts[language].introduction}</p>
-            </Info>
+            <Fade>
+                <Info>
+                    <h4>{texts[language].title}</h4>
+                    <p>{texts[language].introduction}</p>
+                </Info>
 
-            <Habil>
-                <HardSkills>
-                    <motion.div
-                        variants={motionVariants}
-                        initial="initial"
-                        animate="animate"
-                        className='carrossel'
-                    >{skills.map((skill, index) => (
-                        <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
-                            <img src={skill} alt={skillTitles[index]} />
-                            <p>{skillTitles[index]}</p>
-                        </div>
-                    ))}
-                    </motion.div>
-                </HardSkills>
-            </Habil>
+                <Habil>
+                    <HardSkills>
+                        <motion.div
+                            variants={motionVariants}
+                            initial="initial"
+                            animate="animate"
+                            className='carrossel'
+                        >{skills.map((skill, index) => (
+                            <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
+                                <img src={skill} alt={skillTitles[index]} />
+                                <p>{skillTitles[index]}</p>
+                            </div>
+                        ))}
+                        </motion.div>
+                    </HardSkills>
+                </Habil>
+            </Fade>
         </Container>
     )
 }
