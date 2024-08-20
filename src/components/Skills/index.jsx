@@ -83,24 +83,24 @@ export function Skills() {
                     <h4>{texts[language].title}</h4>
                     <p>{texts[language].introduction}</p>
                 </Info>
-
-                <Habil>
-                    <HardSkills>
-                        <motion.div
-                            variants={motionVariants}
-                            initial="initial"
-                            animate="animate"
-                            className='carrossel'
-                        >{skills.map((skill, index) => (
-                            <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
-                                <img src={skill} alt={skillTitles[index]} />
-                                <p>{skillTitles[index]}</p>
-                            </div>
-                        ))}
-                        </motion.div>
-                    </HardSkills>
-                </Habil>
             </Fade>
+
+            <Habil>
+                <HardSkills>
+                    <motion.div
+                        variants={motionVariants}
+                        initial="initial"
+                        animate="animate"
+                        className='carrossel'
+                    >{skills.map((skill, index) => (
+                        <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
+                            <img src={skill} alt={skillTitles[index]} />
+                            <p>{skillTitles[index]}</p>
+                        </div>
+                    ))}
+                    </motion.div>
+                </HardSkills>
+            </Habil>
         </Container>
     )
 }
