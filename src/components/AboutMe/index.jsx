@@ -25,7 +25,7 @@ export function AboutMe() {
         }
     };
 
-    const cvLink = 'https://drive.google.com/file/d/1VGyxZ-XPT7_AePUb5vBUm3yBSWoFwXXT/view?usp=sharing';
+    const cvLink = 'https://docs.google.com/document/d/1xb9BmWu-BV_QPLdI1khSnG9RTPwzLDKhuTvGyj8LqEU/edit?usp=sharing';
 
     return (
         <Container id='sobre'>
